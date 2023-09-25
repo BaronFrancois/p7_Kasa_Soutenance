@@ -1,0 +1,28 @@
+/* Styles pour la classe .App */
+.App {
+  text-align: center; /* Centre le texte à l'intérieur */
+}
+
+/* Styles pour le logo dans .App */
+.App-logo {
+  height: 40vmin; /* Hauteur définie en fonction de la taille de la fenêtre */
+  pointer-events: none; /* Désactive les événements de pointeur sur le logo */
+}
+
+/* Styles pour l'en-tête dans .App */
+.App-header {
+  background-color: #282c34; /* Couleur d'arrière-plan */
+  min-height: 100vh; /* Hauteur minimale pour occuper toute la hauteur de la fenêtre */
+  display: flex; /* Utilise Flexbox pour la mise en page */
+  flex-direction: column; /* Organise les éléments en colonne */
+  align-items: center; /* Centre les éléments horizontalement */
+  justify-content: center; /* Centre les éléments verticalement */
+  font-size: calc(10px + 2vmin); /* Taille de la police adaptative */
+  color: white; /* Couleur du texte */
+}
+
+/* Styles pour les liens dans .App */
+.App-link {
+  color: #61dafb; /* Couleur du lien */
+}
+

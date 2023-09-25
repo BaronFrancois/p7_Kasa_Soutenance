@@ -1,0 +1,31 @@
+// Styles pour le conteneur des descriptions sur la page "À propos".
+.about__container {
+  padding-inline: 3rem;  // Espacement horizontal
+}
+
+// Styles pour la bannière de la page "À propos".
+.about .banner {
+  position: relative;                // Positionnement relatif pour permettre l'utilisation de position: absolute à l'intérieur
+  background-position: center;      // Centre l'image d'arrière-plan
+  background-size: cover;           // Ajuste l'image d'arrière-plan pour couvrir l'élément
+  padding-inline: 2rem;             // Espacement horizontal
+  background-image: url("../../assets/images/aboutBanner.png"); // Image d'arrière-plan
+  height: 223px;                    // Hauteur fixe
+  margin: auto;                     // Centrage horizontal
+  border-radius: 1rem;              // Coins arrondis
+  display: grid;                    // Utilisation du display grid pour la mise en page
+  place-items: center;              // Centrage des éléments à la fois horizontalement et verticalement
+  margin-bottom: 1.7rem;            // Espacement en bas
+  max-width: 100%;                 // Largeur maximale
+
+  // Styles pour le pseudo-élément qui ajoute un overlay sombre à la bannière.
+  &::before {
+    position: absolute;             // Positionnement absolu
+    content: "";                    // Contenu vide nécessaire pour le pseudo-élément
+    inset: 0;                       // Positionne le pseudo-élément pour couvrir tout l'élément parent
+    opacity: 0.5;                   // Réduit l'opacité pour l'effet d'overlay
+    background-color: rgba(0, 0, 0, 0.3); // Noir avec 30% d'opacité
+    border-radius: 1rem;            // Coins arrondis
+    z-index: 1;                     // Placer l'overlay au-dessus du contenu de la bannière
+  }
+}

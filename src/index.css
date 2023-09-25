@@ -1,0 +1,17 @@
+/* Styles pour l'élément body (corps) de la page */
+body {
+  margin: 0; /* Supprime les marges par défaut */
+  /* Définit une liste de polices à utiliser, en commençant par la première et en utilisant les suivantes si la précédente n'est pas disponible */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue','montserrat',
+    sans-serif;
+  -webkit-font-smoothing: antialiased; /* Améliore la lisibilité des polices sur les navigateurs basés sur WebKit */
+  -moz-osx-font-smoothing: grayscale;  /* Améliore la lisibilité des polices sur Firefox OS X */
+}
+
+/* Styles pour les éléments de code */
+code {
+  /* Définit une liste de polices spécifiques pour les éléments de code */
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

@@ -1,0 +1,13 @@
+// Importation des variables globales depuis le fichier variables.scss
+@use "../../scss/variables.scss" as *;
+
+// Styles pour le pied de page
+.footer {
+  background-color: $footer-background-color; // Utilisation d'une variable pour la couleur d'arrière-plan
+  color: $color-tertiary;                     // Couleur du texte
+  padding: 20px;                              // Espacement interne
+  text-align: center;                         // Centrage du texte
+  min-height: 100px;                          // Hauteur minimale
+  display: grid;                              // Utilisation du display grid pour la mise en page
+  place-items: center;                        // Centrage des éléments à la fois horizontalement et verticalement
+}

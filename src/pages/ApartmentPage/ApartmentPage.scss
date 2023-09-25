@@ -1,0 +1,68 @@
+// Importation des variables globales depuis le fichier variables.scss
+@use "../../scss/variables.scss" as *;
+
+// Styles pour la page détaillée de l'appartement.
+.apartment-page {
+  color: $color-primary;
+  
+  // Styles pour la bannière d'images de l'appartement.
+  .image__banner .image__container {
+    @media screen and (max-width: 768px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      height: 255px;
+      width: 100%;
+    }
+  }
+
+  .image__banner {
+    .image__container img {
+      max-width: 1240px;
+      height: 415px;
+      object-fit: cover;
+
+      @media screen and (max-width: 768px) {
+        height: 255px;
+        width: 100%;
+      }
+    }
+  }
+
+  // Styles pour la zone de description de l'appartement.
+  .apartment__description__area {
+    display: flex;
+    gap: 1rem;
+    overflow: hidden;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+}
+
+// Styles intégrés depuis ApartmentHeader.scss
+.apartment__header {
+  display: flex;
+  margin-bottom: 2rem;
+  gap: 1rem;
+  @media screen and (width <= 768px) {
+    flex-direction: column;
+  }
+
+  // Styles pour le titre et les détails du propriétaire de l'appartement.
+  .apartment__title { flex-grow: 1; }
+  .apartment__owner {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (width <= 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  
+  // Autres styles (étoiles, badges, tags, titres, etc.) pour les détails de l'appartement.
+  // ... [ces styles sont principalement des ajustements de mise en page et de style visuel]
+}

@@ -1,0 +1,28 @@
+// Importation des modules nécessaires.
+import React from "react";
+import { DescriptionPanel } from "../../components/DescriptionPanel/DescriptionPanel.jsx"; // Importation du composant DescriptionPanel pour afficher des descriptions.
+import Banner from "../../components/Banner/Banner.jsx"; // Importation du composant Banner pour afficher une bannière.
+import "./About.scss"; // Importation des styles associés.
+
+// Définition du composant About.
+function About() {
+  return (
+    // Conteneur principal pour la page "À propos".
+    <div className="about">
+      {/* // Affichage de la bannière. */}
+      <Banner />
+      
+      {/* // Conteneur pour les descriptions. */}
+      <div className="about__container">
+        {/* // Affichage de quatre descriptions avec leurs titres et contenus. */}
+        <DescriptionPanel title="Fiabilité" content="Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes." />
+        <DescriptionPanel title="Respect" content="La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme." />
+        <DescriptionPanel title="Service" content="Nos équipes se tiennent à votre disposition pour vous fournir une expérience parfaite. N'hésitez pas à nous contacter si vous avez la moindre question." />
+        <DescriptionPanel title="Responsabilité" content="La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes." />
+      </div>
+    </div>
+  );
+}
+
+// Exportation du composant pour une utilisation externe.
+export default About;

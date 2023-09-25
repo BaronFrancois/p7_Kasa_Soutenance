@@ -1,0 +1,55 @@
+// Importation des variables globales depuis le fichier variables.scss
+@use "../../scss/variables.scss"  as *;
+
+// Définition de quelques variables de couleur
+$color-primary: #ff6060;
+$color-tertiary: white;
+$background-light: #f1f1f1;
+
+// Styles pour le conteneur principal du panneau de description
+.description__panel {
+  margin-bottom: 1rem;      // Espacement en bas
+  flex-basis: 50%;          // Largeur de base pour une disposition en flex
+
+  // Styles pour tous les éléments <p> à l'intérieur du conteneur
+  p {
+    margin-block: 0;       // Suppression des marges par défaut
+  }
+
+  // Styles pour l'en-tête du panneau de description
+  .description__header {
+    background-color: $color-primary;
+    color: $color-tertiary;
+    padding: 0.2em 1em;
+    border-radius: 0.3rem;
+    display: flex;
+    justify-content: space-between; // Espacement entre le titre et l'icône
+    align-items: center;
+    cursor: pointer;               // Change le curseur en main lors du survol
+  }
+
+  // Styles pour le contenu du panneau de description
+  .description__content {
+    margin-top: -9px;
+    position: relative;
+    z-index: -1;
+    max-height: 0;
+    overflow: hidden;              // Masque le contenu débordant
+    transition: max-height 0.3s ease-in-out;
+    background-color: $color-tertiary;
+    color: #fd7f7f;
+
+    // Styles pour le contenu lorsqu'il est visible
+    &.visible {
+      min-height: 50px;
+      padding: 13px 10px;
+      max-height: fit-content;
+
+      // Styles spécifiques pour les appareils avec une largeur d'écran jusqu'à 768px
+      @media screen and (width <= 768px) {
+        min-height: fit-content;
+        max-height: 293px;
+      }
+    }
+  }
+}

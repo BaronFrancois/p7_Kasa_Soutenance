@@ -1,0 +1,55 @@
+// Importation des variables globales depuis le fichier variables.scss
+@use "../../scss/variables.scss" as *;
+
+// Styles pour le conteneur .apartment
+.apartment {
+  border-radius: 0.5rem;
+  flex-basis: 30%;
+  display: grid;
+  align-items: end;
+  min-width: 200px;
+  min-height: 200px;
+  background-size: cover;
+  position: relative;
+
+  // Pseudo-élément pour ajouter un dégradé en bas
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20%; // Hauteur du dégradé
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    z-index: 1; // Place le dégradé au-dessus de l'image mais en dessous du texte
+    border-radius: 0.5rem;
+  }
+
+  // Styles pour l'image de l'appartement
+  img {
+    width: 340px;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: rgb(149, 157, 165, 20%) 0px 8px 24px;
+    position: relative;
+    z-index: 0; // Assure que l'image est en dessous du dégradé
+  }
+
+  // Styles pour les appareils avec une largeur d'écran jusqu'à 768px
+  @media screen and (width <= 768px) {
+    .apartment {
+      flex-basis: 100%;
+    }
+  }
+
+  // Styles pour le sous-titre de l'appartement
+  & &__subtitle {
+    width: 50%;
+    margin-inline-start: 0.5rem;
+    margin-block-end: 0.5rem;
+    color: $color-tertiary;
+    position: absolute;
+    z-index: 4;
+  }
+}

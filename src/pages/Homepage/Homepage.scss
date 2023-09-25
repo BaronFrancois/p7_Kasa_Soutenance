@@ -1,0 +1,78 @@
+// Importation des variables globales depuis le fichier variables.scss
+@use "../../scss/variables.scss" as colors;
+
+body {
+  margin: 0;               // Suppression des marges par défaut
+  padding: 0;              // Suppression des paddings par défaut
+  font-family: "Roboto", sans-serif;  // Définition de la police
+}
+
+// Styles intégrés depuis ApartmentGrid.scss
+.grid {
+  background-color: colors.$background-dark;   // Couleur d'arrière-plan de la grille
+  min-height: 50vh;        // Hauteur minimale
+  border-radius: 1.3rem;   // Coins arrondis
+  display: flex;           // Utilisation du display flex pour la mise en page
+  gap: 1rem;               // Espacement entre les éléments
+  padding: 2rem 0rem;      // Padding vertical
+  justify-content: space-evenly;  // Espacement équivalent entre les éléments
+  flex-wrap: wrap;         // Passage à la ligne si nécessaire
+  
+  // Styles adaptatifs pour les écrans de petite taille
+  @media screen and (width <= 768px) {
+    justify-content: center;       // Centrage horizontal des éléments
+    background-color: colors.$grid-background-light; // Changement de la couleur d'arrière-plan
+    padding: 0;                    // Suppression du padding
+  }
+}
+
+// Styles pour la bannière de la page d'accueil
+.homepage .banner {
+  position: relative;            // Positionnement relatif pour les éléments enfants en position absolute
+  background-position: center;  // Centrage de l'image d'arrière-plan
+  background-size: cover;       // Ajustement de la taille de l'image
+  padding-inline: 2rem;         // Padding horizontal
+  background-image: url("../../assets/images/Homebanner.png"); // Image d'arrière-plan
+  height: 223px;                // Hauteur fixe
+  margin: auto;                 // Centrage horizontal
+  border-radius: 1rem;          // Coins arrondis
+  display: grid;                // Utilisation du display grid pour la mise en page
+  place-items: center;          // Centrage des éléments
+  margin-bottom: 1.7rem;        // Margin en bas
+  align-content: center;        // Centrage vertical des éléments
+  
+  // Pseudo-élément pour l'overlay sombre sur la bannière
+  &::before {
+    position: absolute;         // Positionnement absolu par rapport à la bannière
+    content: "";                // Contenu vide nécessaire pour le pseudo-élément
+    inset: 0;                   // Positionne le pseudo-élément pour couvrir toute la bannière
+    opacity: 0.5;               // Transparence pour l'effet d'overlay
+    background-color: rgba(0, 0, 0, 0.3); // Noir avec 30% de transparence
+    border-radius: 1rem;        // Coins arrondis
+    z-index: 1;                 // Placer l'overlay en-dessous du texte
+  }
+
+  // Styles pour les titres de la bannière
+  h2 {
+    filter: brightness(2);      // Augmentation de la luminosité
+    color: white;               // Couleur du texte
+    white-space: pre-line;      // Respect des retours à la ligne
+    position: relative;         // Positionnement relatif pour être au-dessus de l'overlay
+    z-index: 2;                 // Placer le texte au-dessus de l'overlay
+
+    &.desktop { display: block; }   // Affichage du titre pour les écrans desktop
+    &.mobile { display: none; }     // Masquage du titre pour les écrans mobiles
+  }
+
+  // Styles adaptatifs pour les écrans de petite taille
+  @media screen and (max-width: 768px) {
+    max-height: 111px;               // Hauteur maximale
+
+    h2.desktop { display: none; }    // Masquage du titre desktop
+    h2.mobile {                      // Styles pour le titre mobile
+      display: block;                // Affichage
+      margin: 0rem 0rem -1rem -6rem; // Ajustement de la marge
+      text-shadow: 2px 2px 3px rgb(0 0 0 / 75%);
+    }
+  }
+}

@@ -1,0 +1,25 @@
+// Importation des variables globales depuis le fichier variables.scss
+@use "../../scss/variables.scss" as *;
+
+// Styles pour le conteneur de la page d'erreur.
+.error-page {
+  color: $color-primary;      // Couleur du texte
+  text-align: center;         // Centrage du texte
+  
+  // Styles pour le code d'erreur (404).
+  h1 {
+    font-size: 10rem;         // Taille de la police
+    margin-bottom: 0.5em;    // Espacement en bas
+  }
+  
+  // Styles pour le message d'erreur.
+  h2 {
+    font-size: 28px;          // Taille de la police
+    font-weight: 400;         // Poids de la police
+  }
+  
+  // Styles pour le lien vers la page d'accueil.
+  a {
+    color: $color-primary;    // Couleur du lien
+  }
+}

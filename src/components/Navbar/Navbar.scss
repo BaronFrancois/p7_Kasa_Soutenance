@@ -1,0 +1,42 @@
+// Importation des variables globales depuis le fichier variables.scss
+@use "../../scss/variables.scss" as *;
+
+// Styles pour le logo dans la barre de navigation
+.navbar__logo {
+  max-width: 30%;
+}
+
+// Styles pour la barre de navigation elle-même
+.navbar {
+  display: flex;               // Disposition horizontale des éléments
+  align-items: center;         // Centre verticalement les éléments
+  padding: 0 50px;             // Espacement à gauche et à droite
+  color: $color-primary;       // Couleur du texte définie dans variables.scss
+  font-weight: 700;            // Poids de la police
+  gap: 2rem;                   // Espacement entre les éléments
+
+  // Styles spécifiques pour les appareils avec une largeur d'écran jusqu'à 768px
+  @media screen and (width <= 768px) {
+    text-transform: uppercase; // Met le texte en majuscules
+    font-size: smaller;        // Réduit la taille de la police
+    font-weight: 200;          // Réduit le poids de la police
+    padding: 0px 16px 0px 0px; // Réduit l'espacement à droite
+    gap: 17px;                 // Ajuste l'espacement entre les éléments
+  }
+
+  // Styles pour le premier élément à l'intérieur de la barre de navigation
+  & > *:first-child {
+    margin-right: auto;       // Pousse tous les autres éléments vers la droite
+  }
+
+  // Styles pour les liens dans la barre de navigation
+  & a {
+    text-decoration: none;    // Supprime le soulignement par défaut des liens
+    color: $color-primary;    // Couleur du lien
+
+    // Styles pour le lien actif et lors du survol
+    &.active, &:hover {
+      text-decoration: underline; // Souligne le lien
+    }
+  }
+}

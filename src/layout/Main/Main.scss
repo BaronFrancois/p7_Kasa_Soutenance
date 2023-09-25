@@ -1,0 +1,12 @@
+body{
+  font-family: 'montserrat';
+}
+
+.main {
+  padding: 2rem 50px;
+  min-height: 65vh;
+  @media screen and (width <= 768px) {
+    padding: 1rem;
+    margin-top: -1.5rem;
+  }
+}

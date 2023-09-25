@@ -1,0 +1,65 @@
+// Importation des variables globales depuis le fichier variables.scss
+@use "../../scss/variables.scss"  as *;
+
+// Styles pour la bannière avec le modificateur --homepage
+.banner--homepage {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  padding-inline: 2rem;
+  // Définition de l'image d'arrière-plan pour la bannière
+  background-image: url("../../assets/images/Homebanner.png");
+  height: 223px;
+  margin: auto;
+  border-radius: 1rem;
+  display: grid;
+  place-items: center;
+  color: $color-tertiary;
+  margin-bottom: 1.7rem;
+  max-width: 100%;
+  align-content: center;
+
+  // Pseudo-élément pour ajouter un voile noir avec 30% d'opacité
+  &::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    opacity: 0.5;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 1rem; 
+    z-index: 1; // Place le voile en dessous du texte
+  }
+
+  // Styles pour les titres h2 à l'intérieur de la bannière
+  h2 {
+    filter: brightness(2);
+    white-space: pre-line;
+    position: relative; 
+    z-index: 2;
+
+    // Styles pour le titre de bureau
+    &.desktop {
+      display: block;
+    }
+
+    // Styles pour le titre mobile
+    &.mobile {
+      display: none;
+    }
+  }
+
+  // Styles pour les appareils avec une largeur d'écran jusqu'à 768px
+  @media screen and (max-width: 768px) {
+    max-height: 111px;
+
+    // Cache le titre de bureau et affiche le titre mobile
+    h2.desktop {
+      display: none;
+    }
+
+    h2.mobile {
+      display: block;
+      margin: 0rem 0rem -1rem -6rem;
+    }
+  }
+}
